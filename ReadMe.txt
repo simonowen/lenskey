@@ -1,11 +1,10 @@
-LensKey v1.0
-============
+LensKey v1.0a
+=============
 
 Author:   Simon Owen <simon.owen@simcoupe.org>
-Homepage: http://homepage.ntlworld.com/simon.owen/lenskey/
+Homepage: http://www.simonowen.com/spectrum/lenskey/
 
 See the website for more information, including usage.
 
 
-The source code is released under the GNU General Public Licence (GPL).
 The program comes with NO warranty - use it at your own risk!
