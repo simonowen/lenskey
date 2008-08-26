@@ -1,6 +1,6 @@
 // LensKey - a Lenslok Emulator
 //
-//	(c) 2002-2005	Simon Owen <simon.owen@simcoupe.org>
+// (c) 2002-2008 Simon Owen <simon@simonowen.com>
 
 #include "LensKey.h"
 #include "resource.h"
@@ -24,6 +24,7 @@ const int aanDecode[][16] =
 	{ 0, -81, -31,	13, -62, -41,  22, 0,  0, -22,	39, 58, -12, 29, 70, 0 },	// ACE
 	{ 0, -41, -30, -68, -52, -11, -20, 0,  0,  32,	60, 11,  22, 49, 71, 0 },	// Art Studio
 	{ 0, -41, -57, -77,  10, -28, -19, 0,  0,  43, -10, 22,  32, 77, 58, 0 },	// Elite
+	{ 0, -77, -28,  -4, -19, -59, -39, 0,  0,  20,  51, 10,  10, 66, 28, 0 },	// Graphic Adventure Creator
 	{ 0, -40, -57, -71,  14, -27, -21, 0,  0,  42, -12, 22,  27, 67, 53, 0 },	// Jewels of Darkness
 	{ 0, -27, -39, -71, -6,  -17, -48, 0,  0,  51,	64,  7,  40, 17, 79, 0 },	// Price of Magik
 	{ 0, -82, -31, -58, -20, -42,  10, 0,  0, -10,	32, 65,  20, 44, 80, 0 },	// Tomahawk
@@ -33,7 +34,7 @@ const int aanDecode[][16] =
 // Title descriptions for the combo box - must match the order in the table above
 const char* aszGames[] =
 {
-	"ACE", "Art Studio", "Elite", "Jewels of Darkness", "Price of Magik", "Tomahawk", "TT Racer",
+	"ACE (Air Combat Emulator)", "Art Studio", "Elite", "Graphic Adventure Creator", "Jewels of Darkness", "Price of Magik", "Tomahawk", "TT Racer",
 	NULL
 };
 
@@ -188,15 +189,29 @@ LRESULT CALLBACK WndProc (HWND hwnd_, UINT uMsg_, WPARAM wParam_, LPARAM lParam_
 		{
 			if (fDown)
 			{
+				// The decode table used depends on the title combo box selection
+				const int* panDecode = aanDecode[SendDlgItemMessage(GetParent(hwnd_), IDC_TITLE, CB_GETCURSEL, 0, 0L)];
+
 				// Get the screen DC as set the drawing mode to XOR
 				HDC hdc = GetDC(NULL);
 				int nOldMode = SetROP2(hdc, R2_NOTXORPEN);
 
-				// Create a red pen for the rubber hand
-				HPEN hpenOld = (HPEN)SelectObject(hdc, CreatePen(PS_DOT, 0, RGB(0xff,0x00,0x00)));
+				// Create a red pen for the rubber band
+				HPEN hpenRect = CreatePen(PS_DOT, 0, RGB(0xff,0x00,0x00));
+				HPEN hpenLine = CreatePen(PS_SOLID, 0, RGB(0xff,0x00,0x00));
 
 				// Remove the previous rectangle
+				HPEN hpenOld = (HPEN)SelectObject(hdc, hpenRect);
 				Rectangle(hdc, rView.left, rView.top, ptLast.x+1, ptLast.y+1);
+
+				// Remove the previous strip markers
+				SelectObject(hdc, hpenLine);
+				for (int i = 0 ; i < STRIPS ; i++)
+				{
+					int nOffset = MulDiv(rView.right, panDecode[i] ? panDecode[i] : 101, 100);
+					MoveToEx(hdc, rView.left+nOffset, rView.top-8, NULL);
+					LineTo(hdc, rView.left+nOffset, rView.top);
+				}
 
 				// Mouse movement?
 				if (uMsg_ == WM_MOUSEMOVE)
@@ -206,12 +221,26 @@ LRESULT CALLBACK WndProc (HWND hwnd_, UINT uMsg_, WPARAM wParam_, LPARAM lParam_
 					rView.bottom = pt.y-rView.top+1;
 
 					// Draw a rectangle in the new position
+					SelectObject(hdc, hpenRect);
 					Rectangle(hdc, rView.left, rView.top, pt.x+1, pt.y+1);
+
+					// Draw the new strip markers
+					SelectObject(hdc, hpenLine);
+					for (int i = 0 ; i < STRIPS ; i++)
+					{
+						int nOffset = MulDiv(rView.right, panDecode[i] ? panDecode[i] : 101, 100);
+						MoveToEx(hdc, rView.left+nOffset, rView.top-8, NULL);
+						LineTo(hdc, rView.left+nOffset, rView.top);
+					}
+
+					// Remember the new end position so we can erase the rectangle next time
 					ptLast = pt;
 				}
 
 				// Restore the old mode and release the screen DC
-				DeleteObject(SelectObject(hdc, hpenOld));
+				SelectObject(hdc, hpenOld);
+				DeleteObject(hpenRect);
+				DeleteObject(hpenLine);
 				SetROP2(hdc, nOldMode);
 				ReleaseDC(NULL, hdc);
 
