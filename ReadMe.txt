@@ -1,8 +1,8 @@
-LensKey v1.0a
-=============
+LensKey v1.1
+============
 
-Author:   Simon Owen <simon.owen@simcoupe.org>
-Homepage: http://www.simonowen.com/spectrum/lenskey/
+Author:   Simon Owen <simon@simonowen.com>
+Homepage: http://simonowen.com/spectrum/lenskey/
 
 See the website for more information, including usage.
 
