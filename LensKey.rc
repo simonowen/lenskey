@@ -26,16 +26,16 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 // Dialog
 //
 
-IDD_DIALOG DIALOGEX 0, 0, 94, 55
+IDD_DIALOG DIALOGEX 0, 0, 128, 66
 STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_TOOLWINDOW
-CAPTION "Lens Viewer"
-FONT 8, "MS Sans Serif", 0, 0, 0x1
+CAPTION "Lenskey Viewer"
+FONT 8, "MS Sans Serif"
 BEGIN
-    COMBOBOX        IDC_TITLE,4,40,86,77,CBS_DROPDOWNLIST | WS_VSCROLL | 
+    COMBOBOX        IDC_TITLE,4,51,120,77,CBS_DROPDOWNLIST | WS_VSCROLL | 
                     WS_TABSTOP
     CONTROL         "",IDC_LENSVIEW,"Static",SS_LEFTNOWORDWRAP | NOT 
-                    WS_VISIBLE | WS_GROUP,4,3,86,35
+                    WS_VISIBLE | WS_GROUP,4,3,120,42
 END
 
 
@@ -50,9 +50,9 @@ BEGIN
     IDD_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 4
-        RIGHTMARGIN, 90
+        RIGHTMARGIN, 124
         TOPMARGIN, 3
-        BOTTOMMARGIN, 52
+        BOTTOMMARGIN, 63
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -120,8 +120,8 @@ IDI_ICON                ICON    DISCARDABLE     "icon.ico"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,1
- PRODUCTVERSION 1,0,0,1
+ FILEVERSION 1,1,0,0
+ PRODUCTVERSION 1,1,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -136,17 +136,17 @@ BEGIN
     BEGIN
         BLOCK "080904b0"
         BEGIN
-            VALUE "Comments", "http://homepage.ntlworld.com/simon.owen/\0"
+            VALUE "Comments", "http://simonowen.com/spectrum/lenskey/\0"
             VALUE "CompanyName", "by Simon Owen\0"
             VALUE "FileDescription", "Lenslok decoder\0"
-            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "FileVersion", "1, 1, 0, 0\0"
             VALUE "InternalName", "LensKey\0"
-            VALUE "LegalCopyright", "Copyright © 2002\0"
+            VALUE "LegalCopyright", "Copyright © 2002-8\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "LensKey.exe\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "\0"
-            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "ProductVersion", "1, 1, 0, 0\0"
             VALUE "SpecialBuild", "\0"
         END
     END
