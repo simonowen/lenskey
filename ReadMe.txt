@@ -1,10 +1,21 @@
 LensKey v1.1
 ============
 
-Author:   Simon Owen <simon@simonowen.com>
-Homepage: http://simonowen.com/spectrum/lenskey/
+See website for usage: http://simonowen.com/spectrum/lenskey/
 
-See the website for more information, including usage.
+---
 
+Version 1.1 (26/8/2008)
+- Added Graphic Adventure Creator lens mapping
+- Selection show lines at sampling points to help with positioning
 
-The program comes with NO warranty - use it at your own risk!
+Version 1.0a (23/1/2005)
+- Removed GPL license, now freeware
+
+Version 1.0 (21/9/2002)
+- Initial release
+
+---
+
+Simon Owen
+simon@simonowen.com
