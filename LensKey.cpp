@@ -21,20 +21,22 @@ const char* const WINDOW_CLASS = "LensKeyClass";
 // Zero is a special case and will be drawn as background colour to leave a gap
 const int aanDecode[][16] = 
 {
-	{ 0, -81, -31,	13, -62, -41,  22, 0,  0, -22,	39, 58, -12, 29, 70, 0 },	// ACE
-	{ 0, -41, -30, -68, -52, -11, -20, 0,  0,  32,	60, 11,  22, 49, 71, 0 },	// Art Studio
+	{ 0, -81, -31,  13, -62, -41,  22, 0,  0, -22,  39, 58, -12, 29, 70, 0 },	// ACE
+	{ 0, -41, -30, -68, -52, -11, -20, 0,  0,  32,  60, 11,  22, 49, 71, 0 },	// Art Studio
 	{ 0, -41, -57, -77,  10, -28, -19, 0,  0,  43, -10, 22,  32, 77, 58, 0 },	// Elite
 	{ 0, -77, -28,  -4, -19, -59, -39, 0,  0,  20,  51, 10,  10, 66, 28, 0 },	// Graphic Adventure Creator
 	{ 0, -40, -57, -71,  14, -27, -21, 0,  0,  42, -12, 22,  27, 67, 53, 0 },	// Jewels of Darkness
-	{ 0, -27, -39, -71, -6,  -17, -48, 0,  0,  51,	64,  7,  40, 17, 79, 0 },	// Price of Magik
-	{ 0, -82, -31, -58, -20, -42,  10, 0,  0, -10,	32, 65,  20, 44, 80, 0 },	// Tomahawk
-	{ 0, -20, -41, -69, -53,   6, -29, 0,  0,  -9,	64, 20,  46, 33, 81, 0 }	// TT Racer
+	{ 0, -79, -31,  -7, -22, -61, -44, 0,  0,  18,  50,  7,  67, 39, 27, 0 },	// Mooncresta
+	{ 0, -27, -39, -71, -6,  -17, -48, 0,  0,  51,  64,  7,  40, 17, 79, 0 },	// Price of Magik
+	{ 0, -82, -31, -58, -20, -42,  10, 0,  0, -10,  32, 65,  20, 44, 80, 0 },	// Tomahawk
+	{ 0, -20, -41, -69, -53,   6, -29, 0,  0,  -9,  64, 20,  46, 33, 81, 0 }	// TT Racer
 };
 
 // Title descriptions for the combo box - must match the order in the table above
 const char* aszGames[] =
 {
-	"ACE (Air Combat Emulator)", "Art Studio", "Elite", "Graphic Adventure Creator", "Jewels of Darkness", "Price of Magik", "Tomahawk", "TT Racer",
+	"ACE (Air Combat Emulator)", "Art Studio", "Elite", "Graphic Adventure Creator", "Jewels of Darkness",
+	"Mooncresta", "Price of Magik", "Tomahawk", "TT Racer",
 	NULL
 };
 

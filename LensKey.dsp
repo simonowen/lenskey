@@ -123,7 +123,7 @@ SOURCE=.\resource.h
 # End Group
 # Begin Source File
 
-SOURCE=..\ReadMe.txt
+SOURCE=.\ReadMe.txt
 # End Source File
 # End Target
 # End Project

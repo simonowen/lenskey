@@ -1,9 +1,14 @@
-LensKey v1.1
+LensKey v1.2
 ============
 
 See website for usage: http://simonowen.com/spectrum/lenskey/
 
 ---
+
+Version 1.2 (12/10/2008)
+------------------------
+- Added Mooncresta lens mapping
+
 
 Version 1.1 (26/8/2008)
 -----------------------
