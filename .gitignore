@@ -1,0 +1,11 @@
+.*
+!.gitignore
+
+*.aps
+*.opt
+*.ncb
+*.plg
+*.suo
+*.vcproj.*.user
+[Dd]ebug/
+[Rr]elease/
