@@ -7,7 +7,7 @@
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#include "afxres.h"
+#include <windows.h>
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -120,8 +120,8 @@ IDI_ICON                ICON    DISCARDABLE     "icon.ico"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,0,0
- PRODUCTVERSION 1,2,0,0
+ FILEVERSION 1,2,1,0
+ PRODUCTVERSION 1,2,1,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -136,17 +136,17 @@ BEGIN
     BEGIN
         BLOCK "080904b0"
         BEGIN
-            VALUE "Comments", "http://simonowen.com/spectrum/lenskey/\0"
+            VALUE "Comments", "https://simonowen.com/spectrum/lenskey/\0"
             VALUE "CompanyName", "by Simon Owen\0"
             VALUE "FileDescription", "Lenslok decoder\0"
-            VALUE "FileVersion", "1, 2, 0, 0\0"
+            VALUE "FileVersion", "1, 2, 1, 0\0"
             VALUE "InternalName", "LensKey\0"
-            VALUE "LegalCopyright", "Copyright © 2002-8\0"
+            VALUE "LegalCopyright", "(c) 2002-2026\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "LensKey.exe\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "\0"
-            VALUE "ProductVersion", "1, 2, 0, 0\0"
+            VALUE "ProductVersion", "1, 2, 1, 0\0"
             VALUE "SpecialBuild", "\0"
         END
     END

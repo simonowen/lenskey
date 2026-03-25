@@ -1,0 +1,23 @@
+Checks: [
+   -*,
+   clang-analyzer-core-*,
+   clang-analyzer-cplusplus-*,
+   clang-analyzer-deadcode-*,
+   clang-analyzer-optin*,
+   clang-analyzer-security*,
+   clang-analyzer-unix*,
+   clang-diagnostic-*,
+   cppcoreguidelines-*,
+   -cppcoreguidelines-avoid-non-const-global-variables,
+   modernize-*,
+   misc-*,
+   performance-*,
+   readability-*
+]
+WarningsAsErrors: '*'
+FormatStyle: none
+CheckOptions:
+- key: readability-inconsistent-declaration-parameter-name.Strict
+  value: 'true'
+- key: readability-identifier-length.MinimumVariableNameLength
+  value: 2
